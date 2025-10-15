@@ -99,6 +99,29 @@ const poolSlider = new Swiper('.popular-slider', {
   }
 })
 
+const blogSlider = new Swiper('.blog-slider', {
+  loop: true,
+  spaceBetween: 10,
+    navigation: {
+    nextEl: '.blog-slider__next',
+    prevEl: '.blog-slider__prev',
+  },
+  pagination: {
+    el: '.blog-slider__pagination',
+    clickable: true,
+  },
+    breakpoints: {
+    840: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1340: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    }
+  }
+})
+
 // ============ HEART LIKE ==============
 
 const poolItems = document.querySelectorAll('.pool-card');
