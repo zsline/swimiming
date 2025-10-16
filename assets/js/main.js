@@ -55,23 +55,21 @@ if(swiperCat){
         slide.classList.add('swiper-slide-blur');
       }
     });
-  } else if(window.innerWidth < 1280){
-    swiperCat.slides.forEach(slide => {
-      const idx = Number(slide.dataset.swiperSlideIndex);
-      if (idx === activeIndex|| idx === fourthIndex) {
-        slide.classList.add('swiper-slide-blur');
-      }
-    });
-  } else {
-    swiperCat.slides.forEach(slide => {
-      const idx = Number(slide.dataset.swiperSlideIndex);
-      if (idx === activeIndex || idx === fifthIndex) {
-        slide.classList.add('swiper-slide-blur');
-      }
-    });
-  }
-
-
+    } else if(window.innerWidth < 1280){
+      swiperCat.slides.forEach(slide => {
+        const idx = Number(slide.dataset.swiperSlideIndex);
+        if (idx === activeIndex|| idx === fourthIndex) {
+          slide.classList.add('swiper-slide-blur');
+        }
+      });
+    } else {
+      swiperCat.slides.forEach(slide => {
+        const idx = Number(slide.dataset.swiperSlideIndex);
+        if (idx === activeIndex || idx === fifthIndex) {
+          slide.classList.add('swiper-slide-blur');
+        }
+      });
+    }
   });
 }
 
@@ -121,7 +119,46 @@ const blogSlider = new Swiper('.blog-slider', {
     }
   }
 })
-
+const reviewsSlider = new Swiper('.reviews__slider', {
+  slidesPerView: 'auto',
+  spaceBetween: 10,
+  navigation: {
+  nextEl: '.reviews__slider--next',
+  prevEl: '.reviews__slider--prev',
+  },
+  pagination: {
+    el: '.reviews-slider__pagination',
+    clickable: true,
+  },
+    breakpoints: {
+    840: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    1340: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    }
+  }
+})
+const partnersSlider = new Swiper('.partners__slider', {
+  loop: true,
+  breakpoints: {
+    320:{
+  slidesPerView: 'auto',
+    spaceBetween: 20,
+    centeredSlides: true
+        },
+    560:{
+      spaceBetween: 40,
+      slidesPerView: 4,
+    },
+    840: {
+      spaceBetween: 54,
+      slidesPerView: 6,
+    },
+  }
+})
 // ============ HEART LIKE ==============
 
 const poolItems = document.querySelectorAll('.pool-card');
