@@ -1004,9 +1004,6 @@ main {
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image: url("../img/front-hero.jpg");
-  background-size: cover;
-  background-position: center;
   width: 100%;
   aspect-ratio: 1.78 / 1;
   color: #fff;
@@ -1020,6 +1017,27 @@ main {
       -ms-flex-pack: start;
           justify-content: start;
   margin-bottom: 25px;
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero__background picture {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.hero__background picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
 }
 
 .hero__offer {
@@ -1071,6 +1089,43 @@ main {
   font-size: clamp(0.75rem, calc(0.67rem + 0.28vw), 1rem);
   font-weight: 600;
   text-align: center;
+}
+
+@media (max-width: 865px) {
+  .hero {
+    overflow: hidden;
+    display: block;
+    min-height: auto;
+    height: 100vh;
+    aspect-ratio: auto;
+  }
+  .hero__offer {
+    margin-top: 130px;
+    padding: 27px 10px;
+  }
+  .hero__offer .subtitle {
+    margin-top: clamp(1rem, calc(-0.42rem + 5.29vw), 2.44rem);
+    margin-bottom: clamp(1rem, calc(-0.42rem + 5.29vw), 2.44rem);
+  }
+  .hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .hero__background picture img {
+    -o-object-position: center top;
+       object-position: center top;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero__offer {
+    margin-top: clamp(5.13rem, calc(-16.18rem + 90.91vw), 8.25rem);
+  }
 }
 
 .cat-slider {
