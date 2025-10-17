@@ -198,3 +198,24 @@ poolItems.forEach(el => {
 }
 
 
+// ======== МОБИЛЬНОЕ МЕНЮ ==============
+
+const headeWrrapper = document.querySelector('.header')
+const menuBtn = document.querySelector('.header__button');
+const menuClose = document.querySelector('.header__close');
+
+function openMenu() {
+  headeWrrapper.classList.add('open');
+}
+function closeMenu() {
+  headeWrrapper.classList.remove('open');
+}
+
+if(headeWrrapper){
+  menuBtn.addEventListener('click', () => {
+    openMenu();
+  });
+    menuClose.addEventListener('click', () => {
+    closeMenu();
+  });
+}
